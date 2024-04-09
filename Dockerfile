@@ -5,7 +5,7 @@ ENV GOOS linux
 ENV GOARCH amd64
 WORKDIR /src
 COPY . .
-RUN CGO_ENABLED=0 GOOS=${GOOS} GOARCH=${GOARCH} go build -a -o server
+RUN CGO_ENABLED=0 GOOS=${GOOS} GOARCH=${GOARCH} go build -a -o server main.go
 
 # Final
 FROM ubuntu
